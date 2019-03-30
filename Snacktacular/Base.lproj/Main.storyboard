@@ -352,7 +352,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Eky-22-tpv"/>
-                        <barButtonItem title="Look Up Place" id="Rpz-Gd-kmz">
+                        <barButtonItem title="Lookup Place" id="Rpz-Gd-kmz">
                             <connections>
                                 <action selector="lookupPlacePressed:" destination="L7d-5i-Cie" id="dml-xp-5wZ"/>
                             </connections>
