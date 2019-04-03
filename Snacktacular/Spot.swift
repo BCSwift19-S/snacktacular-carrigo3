@@ -20,7 +20,7 @@ class Spot: NSObject, MKAnnotation {
     var postingUserID: String
     var documentID: String
     
-    var longitutde: CLLocationDegrees {
+    var longitude: CLLocationDegrees {
         return coordinate.longitude
     }
     
@@ -37,7 +37,7 @@ class Spot: NSObject, MKAnnotation {
     }
     
     var dictionary: [String: Any] {
-        return ["name": name, "address": address, "longitutde": longitutde, "latitude": latitude, "averageRating": averageRating, "numberOfReviews": numberOfReviews, "postingUserID": postingUserID]
+        return ["name": name, "address": address, "longitude": longitude, "latitude": latitude, "averageRating": averageRating, "numberOfReviews": numberOfReviews, "postingUserID": postingUserID]
     }
     
     init(name: String, address: String, coordinate: CLLocationCoordinate2D, averageRating: Double, numberOfReviews: Int, postingUserID: String, documentID: String) {
@@ -85,6 +85,7 @@ class Spot: NSObject, MKAnnotation {
                     completed(false)
                 } else {
                     print("^^^ Document updated with ref ID \(ref.documentID)")
+                    print("\(String(describing: self.dictionary["coordinate"]))")
                     completed(true)
                 }
             }

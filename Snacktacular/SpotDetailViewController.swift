@@ -36,8 +36,9 @@ class SpotDetailViewController: UIViewController {
         }
         nameField.text = spot.name
         addressField.text = spot.address
-        
-        let region = MKCoordinateRegion(center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let center = spot.coordinate
+        print("***** Center = \(center)")
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         updateUserInterface()
     }
@@ -58,6 +59,7 @@ class SpotDetailViewController: UIViewController {
     func updateMap() {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(spot)
+        print("**** spot.coordinate \(spot.coordinate)")
         mapView.setCenter(spot.coordinate, animated: true)
     }
     
@@ -178,21 +180,20 @@ extension SpotDetailViewController: CLLocationManagerDelegate {
         var address = ""
         currentLocation = locations.last
         spot.coordinate = currentLocation.coordinate
-        geoCoder.reverseGeocodeLocation(currentLocation, completionHandler:
-            {placemarks, error in
-                if placemarks != nil {
-                    let placemark = placemarks?.last
-                    name = placemark?.name ?? "name unknown"
-                    // need to import Contacts to use this code:
-                    if let postalAddress = placemark?.postalAddress {
-                        address = CNPostalAddressFormatter.string(from: postalAddress, style: .mailingAddress)
-                    }
-                } else {
-                    print("*** Error retrieving place. Error code: \(error!.localizedDescription)")
+        geoCoder.reverseGeocodeLocation(currentLocation, completionHandler: {placemarks, error in
+            if placemarks != nil {
+                let placemark = placemarks?.last
+                name = placemark?.name ?? "name unknown"
+                // need to import Contacts to use this code:
+                if let postalAddress = placemark?.postalAddress {
+                    address = CNPostalAddressFormatter.string(from: postalAddress, style: .mailingAddress)
                 }
-                self.spot.name = name
-                self.spot.address = address
-                self.updateUserInterface()
+            } else {
+                print("*** Error retrieving place. Error code: \(error!.localizedDescription)")
+            }
+            self.spot.name = name
+            self.spot.address = address
+            self.updateUserInterface()
         })
     }
     

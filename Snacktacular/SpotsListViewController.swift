@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 import FirebaseUI
 import GoogleSignIn
 
@@ -16,6 +17,7 @@ class SpotsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var spots: Spots!
     var authUI: FUIAuth!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
