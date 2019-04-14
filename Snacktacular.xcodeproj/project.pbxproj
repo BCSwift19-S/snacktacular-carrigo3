@@ -23,6 +23,7 @@
 		8EA207382263CA9C00E62C25 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA207372263CA9C00E62C25 /* Double+roundTo.swift */; };
 		8EA2073A2263D3DF00E62C25 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */; };
 		8EA2073C2263D4AF00E62C25 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */; };
+		8EA2073E2263EBDB00E62C25 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2073D2263EBDB00E62C25 /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8EA207372263CA9C00E62C25 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
 		8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
+		8EA2073D2263EBDB00E62C25 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				8E0A67C8224D70E60076B2C4 /* Spots.swift */,
 				8E0A67C6224D6FE00076B2C4 /* Spot.swift */,
+				8EA2073D2263EBDB00E62C25 /* Review.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
@@ -318,6 +321,7 @@
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
+				8EA2073E2263EBDB00E62C25 /* Review.swift in Sources */,
 				8E0A67C7224D6FE00076B2C4 /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
 				8EA2073A2263D3DF00E62C25 /* ReviewTableViewController.swift in Sources */,
