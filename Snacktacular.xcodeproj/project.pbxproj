@@ -21,6 +21,8 @@
 		8E0A67C9224D70E60076B2C4 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A67C8224D70E60076B2C4 /* Spots.swift */; };
 		8E0A67CB224D80AE0076B2C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A67CA224D80AE0076B2C4 /* GoogleService-Info.plist */; };
 		8EA207382263CA9C00E62C25 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA207372263CA9C00E62C25 /* Double+roundTo.swift */; };
+		8EA2073A2263D3DF00E62C25 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */; };
+		8EA2073C2263D4AF00E62C25 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		8E0A67C8224D70E60076B2C4 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		8E0A67CA224D80AE0076B2C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EA207372263CA9C00E62C25 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
+		8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,9 @@
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */,
 				8EA207372263CA9C00E62C25 /* Double+roundTo.swift */,
+				8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
@@ -314,6 +320,8 @@
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				8E0A67C7224D6FE00076B2C4 /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
+				8EA2073A2263D3DF00E62C25 /* ReviewTableViewController.swift in Sources */,
+				8EA2073C2263D4AF00E62C25 /* UIView+addBorder.swift in Sources */,
 				8E0A67C9224D70E60076B2C4 /* Spots.swift in Sources */,
 				8EA207382263CA9C00E62C25 /* Double+roundTo.swift in Sources */,
 			);
