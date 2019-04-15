@@ -23,7 +23,8 @@ class SpotDetailViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
     var spot: Spot!
-    var reviews: [Review] = []
+    var reviews: Reviews!
+    var photos: Photos!
     let regionDistance: CLLocationDistance = 750 // 750 meters, or about a half mile
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
@@ -36,6 +37,10 @@ class SpotDetailViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
         //mapView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         if spot == nil { // We are adding a new record, fields should be editable
             spot = Spot()
@@ -55,10 +60,20 @@ class SpotDetailViewController: UIViewController {
             //Hide toolbar so that "Lookup Place" isn't available
             navigationController?.setToolbarHidden(true, animated: true)
         }
+        reviews = Reviews()
+        photos = Photos()
         
         let region = MKCoordinateRegion(center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         updateUserInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reviews.loadData(spot: spot) {
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,23 +91,11 @@ class SpotDetailViewController: UIViewController {
             let destination = segue.destination as! ReviewTableViewController
             destination.spot = spot
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.review = reviews[selectedIndexPath.row]
+            destination.review = reviews.reviewArray[selectedIndexPath.row]
         default:
             print("*** ERROR: Did not have a segue in SpotDetailViewController prepare(for segue:)")
         }
     }
-    
-    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
-        saveBarButton.isEnabled = !(nameField.text == "")
-    }
-    
-    @IBAction func textFieldReturnPressed(_ sender: UITextField) {
-        sender.resignFirstResponder()
-        spot.name = nameField.text!
-        spot.address = addressField.text!
-        updateUserInterface()
-    }
-    
     
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -122,8 +125,31 @@ class SpotDetailViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
+    func cameraOrLibraryAlert() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: nil)
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cameraAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        saveBarButton.isEnabled = !(nameField.text == "")
+    }
+    
+    @IBAction func textFieldReturnPressed(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        spot.name = nameField.text!
+        spot.address = addressField.text!
+        updateUserInterface()
+    }
 
     @IBAction func photoButtonPressed(_ sender: UIButton) {
+        cameraOrLibraryAlert()
     }
     
     @IBAction func reviewButtonPressed(_ sender: UIButton) {
@@ -251,5 +277,29 @@ extension SpotDetailViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to get user location.")
+    }
+}
+
+extension SpotDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.reviewArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! SpotReviewsTableViewCell
+        cell.review = reviews.reviewArray[indexPath.row]
+        return cell
+    }
+}
+
+extension SpotDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.photoArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! SpotPhotosCollectionViewCell
+        cell.photo = photos.photoArray[indexPath.row]
+        return cell
     }
 }
