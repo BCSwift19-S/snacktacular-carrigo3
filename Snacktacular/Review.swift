@@ -14,14 +14,14 @@ class Review {
     var text: String
     var rating: Int
     var reviewerUserID: String
-    var date: Date
+    var date: TimeInterval
     var documentID: String
     
     var dictionary: [String: Any] {
         return ["title": title, "text": text, "rating": rating, "reviewerUserID": reviewerUserID, "date": date, "documentID": documentID]
     }
     
-    init(title: String, text: String, rating: Int, reviewerUserID: String, date: Date, documentID: String) {
+    init(title: String, text: String, rating: Int, reviewerUserID: String, date: TimeInterval, documentID: String) {
         self.title = title
         self.text = text
         self.rating = rating
@@ -35,13 +35,14 @@ class Review {
         let text = dictionary["text"] as! String? ?? ""
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewerUserID = dictionary["reviewerUserID"] as! String? ?? ""
-        let date = dictionary["date"] as! Date? ?? Date()
+        let date = dictionary["date"] as! TimeInterval? ?? 0.0
         self.init(title: title, text: text, rating: rating, reviewerUserID: reviewerUserID, date: date, documentID: "")
     }
     
     convenience init() {
         let currentUserID = Auth.auth().currentUser?.email ?? "Unknown User"
-        self.init(title: "", text: "", rating: 0, reviewerUserID: currentUserID, date: Date(), documentID: "")
+        let newDate = Date().timeIntervalSince1970
+        self.init(title: "", text: "", rating: 0, reviewerUserID: currentUserID, date: newDate, documentID: "")
     }
     
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
