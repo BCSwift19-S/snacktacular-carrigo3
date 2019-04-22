@@ -684,12 +684,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="pGl-Z3-6Qs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QyM-EN-der">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="QyM-EN-der">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="aQl-tC-5Dv" id="wKV-Xe-AKh"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vfW-K3-GBJ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="vfW-K3-GBJ">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="aQl-tC-5Dv" id="kuK-5d-c5Z"/>
                             </connections>
@@ -704,8 +704,8 @@
                         <outlet property="nameLabel" destination="MqX-DM-5al" id="7dE-Sq-EGT"/>
                         <outlet property="postedByLabel" destination="JWg-xn-RoF" id="Kz7-3h-N6e"/>
                         <outlet property="reviewDateLabel" destination="Jbu-NO-6bC" id="u4d-1d-cCl"/>
-                        <outlet property="reviewTitle" destination="8zk-JD-j70" id="hH0-G8-z7o"/>
-                        <outlet property="reviewView" destination="Lac-QK-PgS" id="yrQ-DG-BFj"/>
+                        <outlet property="reviewTextView" destination="Lac-QK-PgS" id="yrQ-DG-BFj"/>
+                        <outlet property="reviewTitleField" destination="8zk-JD-j70" id="hH0-G8-z7o"/>
                         <outlet property="saveBarButton" destination="vfW-K3-GBJ" id="Q6F-1P-vng"/>
                         <outletCollection property="starButtonCollection" destination="n8t-3S-fgX" collectionClass="NSMutableArray" id="fcZ-Qv-eEs"/>
                         <outletCollection property="starButtonCollection" destination="O5g-Yx-t15" collectionClass="NSMutableArray" id="S6a-FN-jIk"/>
