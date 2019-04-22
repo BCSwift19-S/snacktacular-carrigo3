@@ -76,6 +76,10 @@ class SpotDetailViewController: UIViewController {
         reviews.loadData(spot: spot) {
             self.tableView.reloadData()
         }
+        
+        photos.loadData(spot: spot) {
+            self.collectionView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -316,10 +320,6 @@ extension SpotDetailViewController: UINavigationControllerDelegate, UIImagePicke
         photo.image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         dismiss(animated: true) {
             photo.saveData(spot: self.spot) { (success) in
-                if success {
-                    self.photos.photoArray.append(photo)
-                    self.collectionView.reloadData()
-                }
             }
         }
     }
