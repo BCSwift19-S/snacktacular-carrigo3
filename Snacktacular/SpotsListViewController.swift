@@ -18,6 +18,7 @@ class SpotsListViewController: UIViewController {
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     var spots: Spots!
     var authUI: FUIAuth!
+    var snackUser: SnackUser!
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     
@@ -53,11 +54,14 @@ class SpotsListViewController: UIViewController {
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),
             ]
+        let currentUser = authUI.auth?.currentUser
         if authUI.auth?.currentUser == nil {
             self.authUI.providers = providers
             present(authUI.authViewController(), animated: true, completion: nil)
         } else {
             tableView.isHidden = false
+            snackUser = SnackUser(user: currentUser!)
+            snackUser.saveIfNewUser()
         }
         
     }
@@ -124,7 +128,6 @@ extension SpotsListViewController: UITableViewDelegate, UITableViewDataSource {
         if let currentLocation = currentLocation {
             cell.currentLocation = currentLocation
         }
-        cell.nameLabel.text = spots.spotArray[indexPath.row].name
         cell.configureCell(spot: spots.spotArray[indexPath.row])
         return cell
     }

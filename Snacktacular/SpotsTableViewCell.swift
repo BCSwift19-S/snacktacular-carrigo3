@@ -20,7 +20,11 @@ class SpotsTableViewCell: UITableViewCell {
     
     func configureCell(spot: Spot) {
         nameLabel.text = spot.name
-        
+        if spot.averageRating == 0.0 {
+            ratingLabel.text = "-.-"
+        } else {
+            ratingLabel.text = "\(spot.averageRating)"
+        }
         //calculate distance here
         guard let currentLocation = currentLocation else {
             return

@@ -60,10 +60,8 @@ class ReviewTableViewController: UITableViewController {
         reviewTitleField.text = review.title
         reviewTextView.text = review.text
         enableDisableSaveButton()
-        // TODO: Fix date to properly format the TimeInterval
-        //dateFormatter.dateStyle = .medium
-        //dateFormatter.timeStyle = .none
-        //reviewDateLabel.text = "posted: \(review.date)"
+        let convertedDate = Date(timeIntervalSince1970: review.date)
+        reviewDateLabel.text = "posted: \(convertedDate)"
         if review.documentID == "" { // This is a new review
             addBordersToEditableObjects()
         } else {
@@ -147,15 +145,6 @@ class ReviewTableViewController: UITableViewController {
         leaveViewController()
     }
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        review.title = reviewTitleField.text!
-        review.text = reviewTextView.text!
-        review.saveData(spot: spot) { (success) in
-            if success {
-                self.leaveViewController()
-            } else {
-                print("*** ERROR: Couldn't leave the view contoller because data wasn't saved.")
-            }
-        }
+        saveThenSegue()
     }
-    
 }

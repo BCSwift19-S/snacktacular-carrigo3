@@ -27,6 +27,10 @@
 		8EA207402263F56B00E62C25 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2073F2263F56B00E62C25 /* Reviews.swift */; };
 		8EA207422264013200E62C25 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA207412264013200E62C25 /* Photo.swift */; };
 		8EA20744226401FA00E62C25 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA20743226401FA00E62C25 /* Photos.swift */; };
+		8EC4DBE5226E8AD10027CCA5 /* SnackUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4DBE4226E8AD10027CCA5 /* SnackUser.swift */; };
+		8EC4DBE7226E9B090027CCA5 /* SnackUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4DBE6226E9B090027CCA5 /* SnackUsersListViewController.swift */; };
+		8EC4DBE9226E9EFC0027CCA5 /* SnackUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4DBE8226E9EFC0027CCA5 /* SnackUserTableViewCell.swift */; };
+		8EC4DBEB226EA08B0027CCA5 /* SnackUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4DBEA226EA08B0027CCA5 /* SnackUsers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		8EA2073F2263F56B00E62C25 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		8EA207412264013200E62C25 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8EA20743226401FA00E62C25 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		8EC4DBE4226E8AD10027CCA5 /* SnackUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackUser.swift; sourceTree = "<group>"; };
+		8EC4DBE6226E9B090027CCA5 /* SnackUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackUsersListViewController.swift; sourceTree = "<group>"; };
+		8EC4DBE8226E9EFC0027CCA5 /* SnackUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackUserTableViewCell.swift; sourceTree = "<group>"; };
+		8EC4DBEA226EA08B0027CCA5 /* SnackUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,8 @@
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				8E0A67C8224D70E60076B2C4 /* Spots.swift */,
 				8E0A67C6224D6FE00076B2C4 /* Spot.swift */,
+				8EC4DBEA226EA08B0027CCA5 /* SnackUsers.swift */,
+				8EC4DBE4226E8AD10027CCA5 /* SnackUser.swift */,
 				8EA2073F2263F56B00E62C25 /* Reviews.swift */,
 				8EA2073D2263EBDB00E62C25 /* Review.swift */,
 				8EA20743226401FA00E62C25 /* Photos.swift */,
@@ -102,6 +112,8 @@
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
 				8EA207392263D3DF00E62C25 /* ReviewTableViewController.swift */,
+				8EC4DBE6226E9B090027CCA5 /* SnackUsersListViewController.swift */,
+				8EC4DBE8226E9EFC0027CCA5 /* SnackUserTableViewCell.swift */,
 				8EA207372263CA9C00E62C25 /* Double+roundTo.swift */,
 				8EA2073B2263D4AF00E62C25 /* UIView+addBorder.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
@@ -326,14 +338,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA207422264013200E62C25 /* Photo.swift in Sources */,
+				8EC4DBEB226EA08B0027CCA5 /* SnackUsers.swift in Sources */,
 				8EA207402263F56B00E62C25 /* Reviews.swift in Sources */,
 				3E8390E2206597F600512DEA /* SpotsListViewController.swift in Sources */,
 				8EA20744226401FA00E62C25 /* Photos.swift in Sources */,
+				8EC4DBE7226E9B090027CCA5 /* SnackUsersListViewController.swift in Sources */,
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				8EA2073E2263EBDB00E62C25 /* Review.swift in Sources */,
+				8EC4DBE5226E8AD10027CCA5 /* SnackUser.swift in Sources */,
+				8EC4DBE9226E9EFC0027CCA5 /* SnackUserTableViewCell.swift in Sources */,
 				8E0A67C7224D6FE00076B2C4 /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
 				8EA2073A2263D3DF00E62C25 /* ReviewTableViewController.swift in Sources */,
